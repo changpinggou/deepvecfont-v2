@@ -26,6 +26,10 @@ class SVGDataset(data.Dataset):
                 for dir_name in dirs:
                     self.font_paths.append(os.path.join(self.dir_path, dir_name))
         self.font_paths.sort()
+
+        # 截取只保留前面5个, by applechang
+        self.font_paths = self.font_paths[:5]
+
         print(f"Finished loading {mode} paths, number: {str(len(self.font_paths))}")
         
     def __getitem__(self, index):
