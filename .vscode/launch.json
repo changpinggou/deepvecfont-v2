@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "test_few_shot",
+            "name": "test_few_shot_chinese",
             "type": "debugpy",
             "request": "launch",
             "program": "./test_few_shot.py",
@@ -22,6 +22,27 @@
                 "--ref_nshot", "8",
                 "--ref_char_ids", "9,13,17,19,32,36,46,51",
                 "--name_ckpt", "600_24040.ckpt"
+            ],
+        },
+
+        {
+            "name": "test_few_shot_english",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./test_few_shot.py",
+            "console": "integratedTerminal",
+            "python": "/root/anaconda3/envs/dvf/bin/python",
+            "args": [
+                "--mode", "test",
+                "--name_exp", "dvf_base_exp_eng",
+                "--language", "eng",
+                "--max_seq_len", "51",
+                "--model_name", "main_model",
+                "--batch_size", "1",
+                "--n_samples", "20",
+                // "--ref_nshot", "8",
+                // "--ref_char_ids", "0,1,17,18,24,25,26,27",
+                "--name_ckpt", "600_192921.ckpt"
             ],
         },
     ]
